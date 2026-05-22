@@ -64,17 +64,19 @@ cd lead-ai-fraud-shield
 pip install -r requirements.txt
 ```
 
+> **The pre-trained model is included** — no training step needed. Just install and run.
+
 ### Run the Gradio Demo Locally
 
 ```bash
-python src/app.py
+PYTHONPATH=. python src/app.py
 # Open http://localhost:7860
 ```
 
 ### Run the FastAPI Server
 
 ```bash
-uvicorn api.main:app --reload
+PYTHONPATH=. uvicorn api.main:app --reload
 # Open http://localhost:8000/docs
 ```
 

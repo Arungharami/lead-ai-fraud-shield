@@ -1,0 +1,23 @@
+{
+  "accuracy": 0.973,
+  "training_rows": 4000,
+  "test_rows": 1000,
+  "model_type": "GradientBoostingClassifier",
+  "features": [
+    "transaction_amount",
+    "transaction_hour",
+    "payment_method_encoded",
+    "customer_age",
+    "account_age_days",
+    "previous_orders",
+    "merchant_risk_score",
+    "device_risk_score",
+    "location_risk_score"
+  ],
+  "classes": [
+    "Low Risk",
+    "Medium Risk",
+    "High Risk"
+  ],
+  "note": "Trained on synthetic/benchmark data. Not validated on real-world transactions."
+}

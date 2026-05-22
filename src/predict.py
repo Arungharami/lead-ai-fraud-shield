@@ -14,10 +14,9 @@ def load_model():
     global _model
     if _model is None:
         if not os.path.exists(MODEL_PATH):
-            raise FileNotFoundError(
-                f"Model not found at {MODEL_PATH}. "
-                "Run `python src/model.py` to train and save the model first."
-            )
+            print(f"Model not found at {MODEL_PATH}. Auto-training on synthetic data...")
+            from src.model import train
+            train()
         _model = joblib.load(MODEL_PATH)
     return _model
 

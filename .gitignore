@@ -7,12 +7,14 @@ credentials.json
 secrets.yaml
 config.local.yaml
 
-# Model artifacts — download from HF or generate locally
-model/
-*.joblib
+# Model artifacts — large custom models excluded; pre-trained demo model is included
 *.pkl
 *.pt
 *.h5
+model/*.joblib.bak
+# Allow the trained demo artifacts so users can clone and run immediately
+!model/model.joblib
+!model/metrics.json
 
 # Data — do not commit real transaction data
 data/*.csv
