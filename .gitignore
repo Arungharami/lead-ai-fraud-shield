@@ -1,0 +1,57 @@
+# Secrets — NEVER commit these
+.env
+.env.*
+*.key
+*.pem
+credentials.json
+secrets.yaml
+config.local.yaml
+
+# Model artifacts — download from HF or generate locally
+model/
+*.joblib
+*.pkl
+*.pt
+*.h5
+
+# Data — do not commit real transaction data
+data/*.csv
+data/*.parquet
+data/*.json
+!data/sample_data.csv
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+venv/
+.venv/
+env/
+.Python
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# macOS
+.DS_Store
+.AppleDouble
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+logs/
+
+# Coverage
+.coverage
+htmlcov/

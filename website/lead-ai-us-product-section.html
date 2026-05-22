@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lead.AI Fraud Shield — Explainable Fraud Detection for Your Business</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+    body { font-family: 'Inter', sans-serif; }
+    .gradient-hero { background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%); }
+    .gradient-card { background: linear-gradient(135deg, #1e293b, #0f172a); }
+    .glow { box-shadow: 0 0 30px rgba(99, 102, 241, 0.3); }
+    .risk-high   { color: #ef4444; }
+    .risk-medium { color: #f59e0b; }
+    .risk-low    { color: #22c55e; }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100">
+
+<!-- ── Hero ──────────────────────────────────────────────────────────── -->
+<section class="gradient-hero min-h-screen flex items-center py-20">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+
+    <div class="inline-flex items-center gap-2 bg-indigo-500/10 border border-indigo-500/30 rounded-full px-4 py-2 mb-6 text-sm text-indigo-300">
+      <span class="w-2 h-2 bg-indigo-400 rounded-full animate-pulse"></span>
+      Live Demo Available — No Sign-up Required
+    </div>
+
+    <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
+      Stop Fraud.<br/>
+      <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">
+        Explain Every Decision.
+      </span>
+    </h1>
+
+    <p class="text-xl text-slate-300 max-w-3xl mx-auto mb-10 leading-relaxed">
+      <strong class="text-white">Lead.AI Fraud Shield</strong> gives your team a risk score
+      <em>and a plain-English reason</em> for every transaction — so you stop chargebacks
+      before they happen and spend analyst time where it actually matters.
+    </p>
+
+    <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+      <a href="https://huggingface.co/spaces/arun-gharami/fraud-detection-xai-demo"
+         target="_blank"
+         class="px-8 py-4 bg-indigo-600 hover:bg-indigo-500 rounded-xl font-semibold text-lg transition-all glow">
+        🖥️ Try Live Demo
+      </a>
+      <a href="https://www.lead-ai.us/contact"
+         class="px-8 py-4 bg-white/10 hover:bg-white/20 border border-white/20 rounded-xl font-semibold text-lg transition-all">
+        🚀 Deploy for My Business
+      </a>
+    </div>
+
+    <!-- Quick stats -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
+      <div class="text-center">
+        <div class="text-3xl font-bold text-indigo-400">100K+</div>
+        <div class="text-sm text-slate-400 mt-1">Training Transactions</div>
+      </div>
+      <div class="text-center">
+        <div class="text-3xl font-bold text-purple-400">SHAP</div>
+        <div class="text-sm text-slate-400 mt-1">Every Prediction Explained</div>
+      </div>
+      <div class="text-center">
+        <div class="text-3xl font-bold text-green-400">~2hrs</div>
+        <div class="text-sm text-slate-400 mt-1">To Integrate</div>
+      </div>
+      <div class="text-center">
+        <div class="text-3xl font-bold text-yellow-400">Free</div>
+        <div class="text-sm text-slate-400 mt-1">Open-Source Core</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Problem ────────────────────────────────────────────────────────── -->
+<section class="py-20 bg-slate-900">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-14">
+      <h2 class="text-4xl font-bold mb-4">Fraud Is Costing You More Than You Think</h2>
+      <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+        Every undetected fraudulent transaction costs 3–5× its face value once you
+        factor in chargebacks, dispute fees, and manual review time.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="gradient-card rounded-2xl p-6 border border-slate-700">
+        <div class="text-red-400 text-4xl font-bold mb-2">$48B</div>
+        <div class="font-semibold mb-2">Global fraud losses in 2023</div>
+        <p class="text-slate-400 text-sm">And growing every year as digital payments expand.</p>
+      </div>
+      <div class="gradient-card rounded-2xl p-6 border border-slate-700">
+        <div class="text-orange-400 text-4xl font-bold mb-2">3–5×</div>
+        <div class="font-semibold mb-2">Real cost per fraud transaction</div>
+        <p class="text-slate-400 text-sm">Face value + chargeback fee + dispute time + bank penalty.</p>
+      </div>
+      <div class="gradient-card rounded-2xl p-6 border border-slate-700">
+        <div class="text-yellow-400 text-4xl font-bold mb-2">60–70%</div>
+        <div class="font-semibold mb-2">Fraud caught by basic rule engines</div>
+        <p class="text-slate-400 text-sm">The remaining 30–40% slips through — and you can't explain why.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Solution ───────────────────────────────────────────────────────── -->
+<section class="py-20 bg-slate-950">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-14">
+      <h2 class="text-4xl font-bold mb-4">What Lead.AI Fraud Shield Does</h2>
+      <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+        For every transaction, you get a risk label, a confidence score, and
+        a plain-English explanation of exactly why it was flagged.
+      </p>
+    </div>
+
+    <!-- Example output card -->
+    <div class="max-w-2xl mx-auto gradient-card rounded-2xl p-8 border border-indigo-500/30 glow mb-14">
+      <div class="text-sm text-slate-400 mb-4 font-mono">POST /explain → Response</div>
+      <pre class="text-sm font-mono text-slate-200 overflow-x-auto leading-relaxed">{
+  <span class="text-indigo-400">"risk_label"</span>:   <span class="text-red-400">"High Risk"</span>,
+  <span class="text-indigo-400">"confidence"</span>:   <span class="text-green-400">0.94</span>,
+  <span class="text-indigo-400">"explanation"</span>: {
+    <span class="text-indigo-400">"top_features"</span>: [
+      { <span class="text-yellow-400">"feature"</span>: <span class="text-green-400">"device_risk_score"</span>,  <span class="text-yellow-400">"impact"</span>: <span class="text-red-400">+0.38</span> },
+      { <span class="text-yellow-400">"feature"</span>: <span class="text-green-400">"account_age_days"</span>,   <span class="text-yellow-400">"impact"</span>: <span class="text-red-400">+0.29</span> },
+      { <span class="text-yellow-400">"feature"</span>: <span class="text-green-400">"payment_method"</span>,     <span class="text-yellow-400">"impact"</span>: <span class="text-red-400">+0.18</span> }
+    ],
+    <span class="text-indigo-400">"summary"</span>: <span class="text-green-400">"Flagged: high device risk, new account (8 days), crypto."</span>
+  }
+}</pre>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="text-center p-6 rounded-2xl bg-slate-800/50 border border-slate-700">
+        <div class="text-4xl mb-4">🎯</div>
+        <h3 class="text-lg font-semibold mb-2">3-Tier Risk Label</h3>
+        <p class="text-slate-400 text-sm">Low / Medium / High — route to auto-approve, review queue, or block instantly.</p>
+      </div>
+      <div class="text-center p-6 rounded-2xl bg-slate-800/50 border border-slate-700">
+        <div class="text-4xl mb-4">🔍</div>
+        <h3 class="text-lg font-semibold mb-2">SHAP Explanation</h3>
+        <p class="text-slate-400 text-sm">Every prediction shows which features drove it — device, account age, payment method, and more.</p>
+      </div>
+      <div class="text-center p-6 rounded-2xl bg-slate-800/50 border border-slate-700">
+        <div class="text-4xl mb-4">⚡</div>
+        <h3 class="text-lg font-semibold mb-2">REST API</h3>
+        <p class="text-slate-400 text-sm">FastAPI server with /predict, /explain, /batch-predict. Integrates in ~2 hours.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── How It Works ───────────────────────────────────────────────────── -->
+<section class="py-20 bg-slate-900">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="text-center mb-14">
+      <h2 class="text-4xl font-bold mb-4">How It Works</h2>
+    </div>
+    <div class="grid md:grid-cols-4 gap-4">
+      <div class="text-center">
+        <div class="w-12 h-12 rounded-full bg-indigo-600 flex items-center justify-center text-xl font-bold mx-auto mb-4">1</div>
+        <h3 class="font-semibold mb-2">Transaction Arrives</h3>
+        <p class="text-slate-400 text-sm">Your checkout, payment gateway, or CRM sends transaction data to the API.</p>
+      </div>
+      <div class="text-center">
+        <div class="w-12 h-12 rounded-full bg-indigo-600 flex items-center justify-center text-xl font-bold mx-auto mb-4">2</div>
+        <h3 class="font-semibold mb-2">Model Scores It</h3>
+        <p class="text-slate-400 text-sm">GBM model evaluates 9 risk features and assigns a probability score in milliseconds.</p>
+      </div>
+      <div class="text-center">
+        <div class="w-12 h-12 rounded-full bg-indigo-600 flex items-center justify-center text-xl font-bold mx-auto mb-4">3</div>
+        <h3 class="font-semibold mb-2">SHAP Explains Why</h3>
+        <p class="text-slate-400 text-sm">SHAP TreeExplainer identifies the top risk drivers and generates a plain-English summary.</p>
+      </div>
+      <div class="text-center">
+        <div class="w-12 h-12 rounded-full bg-indigo-600 flex items-center justify-center text-xl font-bold mx-auto mb-4">4</div>
+        <h3 class="font-semibold mb-2">Your Team Acts</h3>
+        <p class="text-slate-400 text-sm">Route Low Risk to auto-approve. Send High Risk to your analyst queue with full context attached.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Use Cases ──────────────────────────────────────────────────────── -->
+<section class="py-20 bg-slate-950">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-14">
+      <h2 class="text-4xl font-bold mb-4">Built For Your Industry</h2>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="gradient-card rounded-2xl p-6 border border-slate-700 hover:border-indigo-500/50 transition-all">
+        <div class="text-3xl mb-3">🛒</div>
+        <h3 class="font-semibold text-lg mb-2">E-Commerce</h3>
+        <p class="text-slate-400 text-sm">Flag high-risk orders before fulfillment. Reduce chargebacks and protect margins on every sale.</p>
+      </div>
+      <div class="gradient-card rounded-2xl p-6 border border-slate-700 hover:border-indigo-500/50 transition-all">
+        <div class="text-3xl mb-3">🏦</div>
+        <h3 class="font-semibold text-lg mb-2">FinTech Startups</h3>
+        <p class="text-slate-400 text-sm">Get a fraud layer before you can afford Kount or Sift. Deploy in days, not months.</p>
+      </div>
+      <div class="gradient-card rounded-2xl p-6 border border-slate-700 hover:border-indigo-500/50 transition-all">
+        <div class="text-3xl mb-3">💳</div>
+        <h3 class="font-semibold text-lg mb-2">Payment Processors</h3>
+        <p class="text-slate-400 text-sm">Pre-authorization risk check with explainable output. Reduce merchant chargeback rates.</p>
+      </div>
+      <div class="gradient-card rounded-2xl p-6 border border-slate-700 hover:border-indigo-500/50 transition-all">
+        <div class="text-3xl mb-3">🔁</div>
+        <h3 class="font-semibold text-lg mb-2">Subscription SaaS</h3>
+        <p class="text-slate-400 text-sm">Detect trial abuse, synthetic identity fraud, and account takeover before it hits your P&L.</p>
+      </div>
+      <div class="gradient-card rounded-2xl p-6 border border-slate-700 hover:border-indigo-500/50 transition-all">
+        <div class="text-3xl mb-3">🏪</div>
+        <h3 class="font-semibold text-lg mb-2">Retail</h3>
+        <p class="text-slate-400 text-sm">Flag card-not-present and cross-border orders before they ship. Cut return fraud.</p>
+      </div>
+      <div class="gradient-card rounded-2xl p-6 border border-slate-700 hover:border-indigo-500/50 transition-all">
+        <div class="text-3xl mb-3">🔎</div>
+        <h3 class="font-semibold text-lg mb-2">Risk Teams</h3>
+        <p class="text-slate-400 text-sm">AI-assisted analyst triage. Explanations cut review time by 70%. Logs support audit trails.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Pricing ────────────────────────────────────────────────────────── -->
+<section class="py-20 bg-slate-900">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="text-center mb-14">
+      <h2 class="text-4xl font-bold mb-4">Simple, Transparent Pricing</h2>
+      <p class="text-slate-400 text-lg">From free open-source to full production deployment.</p>
+    </div>
+    <div class="grid md:grid-cols-4 gap-6">
+      <div class="rounded-2xl p-6 border border-slate-700 bg-slate-800/40 text-center">
+        <div class="text-slate-400 font-medium mb-2">Open Source</div>
+        <div class="text-3xl font-bold mb-4">Free</div>
+        <ul class="text-sm text-slate-400 space-y-2 text-left mb-6">
+          <li>✓ Full source code</li>
+          <li>✓ Pre-trained model</li>
+          <li>✓ FastAPI server</li>
+          <li>✓ Gradio demo</li>
+        </ul>
+        <a href="https://github.com/Arungharami/lead-ai-fraud-shield" target="_blank" class="block text-center py-2 px-4 rounded-lg border border-slate-600 hover:border-indigo-500 text-sm transition-all">Clone Repo</a>
+      </div>
+      <div class="rounded-2xl p-6 border border-slate-700 bg-slate-800/40 text-center">
+        <div class="text-indigo-400 font-medium mb-2">Starter</div>
+        <div class="text-3xl font-bold mb-1">$299</div>
+        <div class="text-xs text-slate-400 mb-4">one-time</div>
+        <ul class="text-sm text-slate-400 space-y-2 text-left mb-6">
+          <li>✓ Retrain on your data</li>
+          <li>✓ Threshold tuning</li>
+          <li>✓ Deployed demo</li>
+          <li>✓ 1hr setup call</li>
+        </ul>
+        <a href="https://www.lead-ai.us/contact" class="block text-center py-2 px-4 rounded-lg bg-indigo-600/20 border border-indigo-500/50 hover:bg-indigo-600/40 text-sm transition-all">Get Started</a>
+      </div>
+      <div class="rounded-2xl p-6 border border-indigo-500 bg-indigo-500/5 text-center relative">
+        <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-indigo-600 text-xs px-3 py-1 rounded-full font-semibold">Popular</div>
+        <div class="text-indigo-400 font-medium mb-2">Professional</div>
+        <div class="text-3xl font-bold mb-1">$999</div>
+        <div class="text-xs text-slate-400 mb-4">one-time</div>
+        <ul class="text-sm text-slate-400 space-y-2 text-left mb-6">
+          <li>✓ Custom model + API</li>
+          <li>✓ Dashboard included</li>
+          <li>✓ Your infra deployment</li>
+          <li>✓ 30-day support</li>
+        </ul>
+        <a href="https://www.lead-ai.us/contact" class="block text-center py-2 px-4 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-sm font-semibold transition-all">Book a Call</a>
+      </div>
+      <div class="rounded-2xl p-6 border border-slate-700 bg-slate-800/40 text-center">
+        <div class="text-purple-400 font-medium mb-2">Business</div>
+        <div class="text-3xl font-bold mb-1">$2,500+</div>
+        <div class="text-xs text-slate-400 mb-4">project</div>
+        <ul class="text-sm text-slate-400 space-y-2 text-left mb-6">
+          <li>✓ Full production deploy</li>
+          <li>✓ Retraining pipeline</li>
+          <li>✓ Drift monitoring</li>
+          <li>✓ 90-day support</li>
+        </ul>
+        <a href="https://www.lead-ai.us/contact" class="block text-center py-2 px-4 rounded-lg border border-slate-600 hover:border-indigo-500 text-sm transition-all">Get a Quote</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Credibility ────────────────────────────────────────────────────── -->
+<section class="py-20 bg-slate-950">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+    <h2 class="text-4xl font-bold mb-6">Built by a Researcher, Not a Sales Team</h2>
+    <div class="gradient-card rounded-2xl p-8 border border-slate-700 text-left max-w-2xl mx-auto">
+      <div class="flex items-start gap-6">
+        <div class="w-16 h-16 rounded-full bg-indigo-600/20 border border-indigo-500/30 flex items-center justify-center text-2xl flex-shrink-0">AK</div>
+        <div>
+          <h3 class="text-xl font-bold">Arun Kumar Gharami</h3>
+          <p class="text-indigo-400 text-sm mb-3">AI Engineer & Applied Researcher · Lead.AI Labs</p>
+          <ul class="text-slate-300 text-sm space-y-1">
+            <li>🎓 MS Computer Science — AI/ML Specialization</li>
+            <li>🔬 Research: Explainable AI, Trustworthy ML, Financial Fraud Detection</li>
+            <li>📚 Published on Google Scholar</li>
+            <li>🏢 Founder, Lead.AI Labs</li>
+          </ul>
+          <div class="flex gap-3 mt-4">
+            <a href="https://www.linkedin.com/in/arunkgharami" target="_blank" class="text-xs text-indigo-400 hover:text-indigo-300 border border-indigo-500/30 px-3 py-1 rounded-full">LinkedIn</a>
+            <a href="https://huggingface.co/arun-gharami" target="_blank" class="text-xs text-indigo-400 hover:text-indigo-300 border border-indigo-500/30 px-3 py-1 rounded-full">Hugging Face</a>
+            <a href="https://scholar.google.com/citations?user=uy4i5soAAAAJ&hl=en" target="_blank" class="text-xs text-indigo-400 hover:text-indigo-300 border border-indigo-500/30 px-3 py-1 rounded-full">Google Scholar</a>
+            <a href="https://github.com/Arungharami" target="_blank" class="text-xs text-indigo-400 hover:text-indigo-300 border border-indigo-500/30 px-3 py-1 rounded-full">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ────────────────────────────────────────────────────────────── -->
+<section class="py-24 gradient-hero">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+    <h2 class="text-5xl font-bold mb-6">Ready to Protect Your Business?</h2>
+    <p class="text-xl text-slate-300 mb-10 max-w-2xl mx-auto">
+      Try the demo for free. Commission a custom build when you're ready to go live.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center flex-wrap">
+      <a href="https://huggingface.co/spaces/arun-gharami/fraud-detection-xai-demo"
+         target="_blank"
+         class="px-8 py-4 bg-indigo-600 hover:bg-indigo-500 rounded-xl font-semibold text-lg transition-all glow">
+        🖥️ Try the Live XAI Demo
+      </a>
+      <a href="https://huggingface.co/datasets/arun-gharami/lead-ai-fraud-detection-dataset-v2"
+         target="_blank"
+         class="px-8 py-4 bg-white/10 hover:bg-white/20 border border-white/20 rounded-xl font-semibold text-lg transition-all">
+        📊 View the Dataset
+      </a>
+      <a href="https://github.com/Arungharami/lead-ai-fraud-shield"
+         target="_blank"
+         class="px-8 py-4 bg-white/10 hover:bg-white/20 border border-white/20 rounded-xl font-semibold text-lg transition-all">
+        💻 Clone on GitHub
+      </a>
+      <a href="https://www.lead-ai.us/contact"
+         class="px-8 py-4 bg-green-600 hover:bg-green-500 rounded-xl font-semibold text-lg transition-all">
+        🚀 Request Custom Integration
+      </a>
+    </div>
+    <p class="text-slate-400 text-sm mt-8">
+      Questions? Connect directly on
+      <a href="https://www.linkedin.com/in/arunkgharami" class="text-indigo-400 hover:underline">LinkedIn</a>
+      or visit <a href="https://www.lead-ai.us" class="text-indigo-400 hover:underline">lead-ai.us</a>
+    </p>
+  </div>
+</section>
+
+</body>
+</html>
